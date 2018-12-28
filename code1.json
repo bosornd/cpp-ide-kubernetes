@@ -1,0 +1,5 @@
+{
+  "file": "test1.c",
+  "program":"#include <stdio.h>\nvoid main(){\nprintf(\"hello world!!!\\n\");\n}",
+  "input":"5\n"
+}

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpp-compiler
+  labels:
+    svc: cpp-compiler
+spec:
+  selector:
+    matchLabels:
+      svc: cpp-compiler
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        svc: cpp-compiler
+    spec:
+      containers:
+      - name: cpp-compiler
+        image: cpp-compiler:v1
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cpp-compiler
+  labels:
+    svc: cpp-compiler
+spec:
+  ports:
+  - port: 8080
+  selector:
+    svc: cpp-compiler
+  type: LoadBalancer

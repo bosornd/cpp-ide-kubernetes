@@ -1,0 +1,17 @@
+{
+  "name": "cpp-compiler",
+  "version": "1.0.0",
+  "description": "C++ compiler",
+  "author": "Yong Jin, Cho <drajin.cho@bosornd.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "morgan": "^1.9.1",
+    "shelljs": "^0.8.3"
+  }
+}
