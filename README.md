@@ -1,8 +1,10 @@
-# nuxt-book-kubernetes
+# simple CPP-IDE on Kubernetes
 
+```
 > Nuxt.js + Vuetify.js project
 > Ace Editor
 > CPP Compiler
+```
 
 # build and deploy on Kubernetes
 
