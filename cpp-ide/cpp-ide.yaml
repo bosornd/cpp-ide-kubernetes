@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpp-ide
+  labels:
+    app: cpp-ide
+spec:
+  selector:
+    matchLabels:
+      app: cpp-ide
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cpp-ide
+    spec:
+      containers:
+      - name: cpp-ide
+        image: cpp-ide:v1
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cpp-ide
+  labels:
+    app: cpp-ide
+spec:
+  ports:
+  - port: 3000
+  selector:
+    app: cpp-ide
+  type: LoadBalancer
